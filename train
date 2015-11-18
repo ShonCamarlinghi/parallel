@@ -1,0 +1,15 @@
+#!/bin/bash
+adb -s $1 shell input tap $2 $3 >>TimingTrain.txt
+date >>TimingTrain.txt
+
+
+
+
+#=========================================
+#1st$ parallel ./train ::: 03157df383d8893b 03157df3c1565c04 03157df3c0c51131 ::: 640 ::: 430 
+#2nd$ parallel ./train ::: 03157df383d8893b 03157df3c1565c04 03157df3c0c51131 ::: 1050 ::: 430 
+#3rd$ parallel ./train ::: 03157df383d8893b 03157df3c1565c04 03157df3c0c51131 ::: 230 ::: 660
+#4rth$ parallel ./train ::: 03157df383d8893b 03157df3c1565c04 03157df3c0c51131 ::: 640 ::: 660
+#Train$ parallel ./train ::: 03157df383d8893b 03157df3c1565c04 03157df3c0c51131 ::: 1110 ::: 660
+
+

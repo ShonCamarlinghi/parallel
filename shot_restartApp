@@ -1,0 +1,12 @@
+#!/bin/bash
+mkdir shots/$2
+#adb -s $1 shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' >>shots/$2/$1_$2.png
+adb -s $1 shell screencap -p | sed 's/\r$//' > shots/$2/$1_$2.png
+#adb -s $1 shell screencap -p > shots/$2/$1_$2.png
+
+sleep 2
+adb -s $1 shell am force-stop com.example.decoderAVoiceQ
+adb -s $1 shell am start com.example.decoderAVoiceQ/.MainActivity
+
+
+
